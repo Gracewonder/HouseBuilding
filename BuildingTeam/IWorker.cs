@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using HouseProject.HouseParts;
 
 namespace HouseProject.BuildingTeam
 {
     public interface IWorker
     {
-        void Building();
+        public string name { get; set; }
     }
 }

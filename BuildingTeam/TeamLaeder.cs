@@ -4,9 +4,42 @@ using System.Text;
 
 namespace HouseProject.BuildingTeam
 {
-    public class TeamLaeder
+    public class TeamLaeder:IWorker
     {
-        public string PrintRaport(int count)
+        public string name { get; set; }
+
+        public bool ChekingPartsOfHouse(string str)
+        {
+            if (str != null)
+            { return true; }
+            else
+                return false;
+        }
+        public int ChekingPartsOfHouse(List<string> strs)
+        {
+            var count = 0;
+            for (var i=0;i<=strs.Count;i++)
+            {
+                if(strs[i]!=null)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        public void PrintMSG(string msg)
+        {
+            Console.WriteLine(msg);
+        }
+        public void PrintReport()
+        {
+
+        }
+
+
+
+ /*       public string PrintReport(int count)
         {
             string message;
             switch (count)
@@ -46,6 +79,7 @@ namespace HouseProject.BuildingTeam
                     break;
             }
             return message;
+ */
         }
         
     }

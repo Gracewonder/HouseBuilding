@@ -6,14 +6,14 @@ namespace HouseProject.HouseParts
 {
     public class House
     {
-        Basement baseMent = new Basement();
+        public Basement baseMent = new Basement();
 
-        List<Wall> walls;
+        public List<Wall> walls;
 
-        List<Window> windows;
+        public List<Window> windows;
 
-        Roof rOOF = new Roof();
+        public Roof rOOF = new Roof();
 
-
+        public House() { }
     }
 }

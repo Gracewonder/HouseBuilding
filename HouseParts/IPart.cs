@@ -6,6 +6,7 @@ namespace HouseProject
 {
     public interface IPart
     {
-        void PartOfHouse();
+        
     }
+    
 }

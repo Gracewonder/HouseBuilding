@@ -6,13 +6,8 @@ namespace HouseProject
 {
     public class Basement:IPart
     {
-        public string basement{ get; set; }
-        void IPart.PartOfHouse()
-        {
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("Фундамент");
-            Console.ResetColor();
-        }
+       public string basement { get; set; }
+
     }
     
 }

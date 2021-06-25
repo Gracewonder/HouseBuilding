@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace HouseProject.BuildingTeam
 {
     public class Worker:IWorker
     {
-        
-        void IWorker.Building()
+        public string name { get; set; }
+       
+        public bool ChekReport(string temp)
+
         {
             
         }
