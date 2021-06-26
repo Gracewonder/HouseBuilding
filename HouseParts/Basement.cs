@@ -6,7 +6,8 @@ namespace HouseProject
 {
     public class Basement:IPart
     {
-       public string basement { get; set; }
+        public string title { get;  set ; }
+        
 
     }
     

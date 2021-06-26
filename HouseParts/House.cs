@@ -8,12 +8,14 @@ namespace HouseProject.HouseParts
     {
         public Basement baseMent = new Basement();
 
-        public List<Wall> walls;
+        public Wall walls=new Wall();
 
-        public List<Window> windows;
+        public Window windows=new Window();
 
         public Roof rOOF = new Roof();
 
         public House() { }
+        public House(Basement basement,Wall wall,Window window,Roof roof)
+        { }
     }
 }

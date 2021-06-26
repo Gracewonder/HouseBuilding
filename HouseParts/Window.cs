@@ -6,13 +6,8 @@ namespace HouseProject
 {
     public class Window:IPart
     {
-        public List<string> windows;
+        public string title { get; set; }
 
-        void IPart.PartOfHouse()
-        {
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Окно");
-            Console.ResetColor();
-        }
+
     }
 }

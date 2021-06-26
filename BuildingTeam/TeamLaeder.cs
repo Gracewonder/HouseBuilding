@@ -1,43 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Reflection;
 
+using HouseProject.HouseParts;
 namespace HouseProject.BuildingTeam
 {
     public class TeamLaeder:IWorker
     {
         public string name { get; set; }
 
-        public bool ChekingPartsOfHouse(string str)
+
+        public House CompleetPart(House chekingHouse, out string compleet)
         {
-            if (str != null)
-            { return true; }
-            else
-                return false;
-        }
-        public int ChekingPartsOfHouse(List<string> strs)
-        {
-            var count = 0;
-            for (var i=0;i<=strs.Count;i++)
+            
             {
-                if(strs[i]!=null)
+                if (!Worker.CheckReport(chekingHouse.baseMent.title))
                 {
-                    count++;
+                    compleet = chekingHouse.baseMent.title;
                 }
+                else if (!Worker.CheckReport(chekingHouse.walls.title))
+                {
+                    compleet = chekingHouse.walls.title;
+                }
+                else if (!Worker.CheckReport(chekingHouse.windows.title))
+                {
+                    compleet = chekingHouse.windows.title;
+                }
+                else if (!Worker.CheckReport(chekingHouse.rOOF.title))
+                {
+                    compleet = chekingHouse.rOOF.title;
+                }
+                else compleet = null;
             }
-            return count;
-        }
 
-        public void PrintMSG(string msg)
+            return chekingHouse;
+        }
+        public void PrintReport(House hs)
         {
-            Console.WriteLine(msg);
+            Console.WriteLine($"{hs.baseMent.title} построен");
+            Console.WriteLine($"{hs.walls.title} построены");
+            Console.WriteLine($"{hs.windows.title} построены");
+            Console.WriteLine($"{hs.rOOF.title} построена");
         }
-        public void PrintReport()
+
+public static void PrintMSG(string str)
         {
-
+            Console.WriteLine(str);
         }
-
-
 
  /*       public string PrintReport(int count)
         {
@@ -80,7 +90,7 @@ namespace HouseProject.BuildingTeam
             }
             return message;
  */
-        }
+        
         
     }
 }

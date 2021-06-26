@@ -6,12 +6,6 @@ namespace HouseProject
 {
     public class Roof:IPart
     {
-        public string roof;
-        void IPart.PartOfHouse()
-        {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("Крыша");
-            Console.ResetColor();
-        }
+        public string title { get; set; }
     }
 }

@@ -6,12 +6,7 @@ namespace HouseProject
 {
     public class Wall:IPart
     {
-        public List<string> walls;
-        void IPart.PartOfHouse()
-        {
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.WriteLine("Стена");
-            Console.ResetColor();
-        }
+        public string title { get; set; }
+
     }
 }

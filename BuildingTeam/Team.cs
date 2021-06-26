@@ -14,7 +14,6 @@ namespace HouseProject.BuildingTeam
         {
             this.teamLaeder.name = teamLeader;
             this.worker.name = worker;
-
         }
 
 

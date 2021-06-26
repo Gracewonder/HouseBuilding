@@ -7,6 +7,8 @@ namespace HouseProject.BuildingTeam
 {
     public interface IWorker
     {
-        public string name { get; set; }
+        string name { get; set; }
+
+        public House CompleetPart(House chekingHouse, out string str);
     }
 }
