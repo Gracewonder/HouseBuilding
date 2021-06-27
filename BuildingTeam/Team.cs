@@ -7,15 +7,12 @@ namespace HouseProject.BuildingTeam
     public class Team
     {
         public Worker worker = new Worker();
-        public TeamLaeder teamLaeder = new TeamLaeder();
+        public TeamLeader teamLeader = new TeamLeader();
 
-        public Team() { }
-        public Team(string teamLeader, string worker)
+        public Team()
         {
-            this.teamLaeder.name = teamLeader;
-            this.worker.name = worker;
+           teamLeader.name= "Бригадир";
+           worker.name= "Рабочий";
         }
-
-
     }
 }

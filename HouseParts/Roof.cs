@@ -6,6 +6,6 @@ namespace HouseProject
 {
     public class Roof:IPart
     {
-        public string title { get; set; }
+        public int amount { get; set; }
     }
 }

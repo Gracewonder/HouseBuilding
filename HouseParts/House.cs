@@ -14,8 +14,11 @@ namespace HouseProject.HouseParts
 
         public Roof rOOF = new Roof();
 
-        public House() { }
-        public House(Basement basement,Wall wall,Window window,Roof roof)
-        { }
+        public House()
+        { baseMent.amount =0;
+            walls.amount = 0;
+            windows.amount = 0;
+            rOOF.amount = 0;
+        }
     }
 }

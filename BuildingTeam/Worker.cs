@@ -5,49 +5,48 @@ using System.IO;
 using HouseProject.HouseParts;
 namespace HouseProject.BuildingTeam
 {
-    public class Worker:IWorker
+    public class Worker : IWorker
     {
         public string name { get; set; }
-       
-        public static bool CheckReport(string str)
 
+        public static House BuildingPatrs( House hs, Worker wr)
         {
-            if (str == null)
+            
+            if (hs.baseMent.amount<1)
             {
-                return true;
+                Console.WriteLine($"{ wr.name} строит фундамент");
+                hs.baseMent.amount ++;
+                goto Ex;
             }
-            else return false;
-        }
-
-        public House CompleetPart(House chekingHouse, out string compleet)
-        {
-
+            else if(hs.baseMent.amount == 1)
             {
-                if (CheckReport(chekingHouse.baseMent.title))
-                {
-                    chekingHouse.baseMent.title = "Фундамент";
-                    compleet = $"{chekingHouse.baseMent.title} готов";
 
-                }
-                else if (CheckReport(chekingHouse.walls.title))
+                if (hs.walls.amount<4)
                 {
-                    chekingHouse.walls.title = "Стены";
-                    compleet = $"{chekingHouse.walls.title} готовы";
+                    Console.WriteLine($"{ wr.name} строит стену");
+                    hs.walls.amount ++;
+                    goto Ex;
                 }
-                else if (CheckReport(chekingHouse.windows.title))
+                else if (hs.walls.amount == 4)
                 {
-                    chekingHouse.windows.title = "Окна";
-                    compleet = $"{chekingHouse.windows.title} готовы";
+                    if (hs.windows.amount<4)
+                    {
+                        Console.WriteLine($"{ wr.name} устанавливает окно");
+                        hs.windows.amount ++;
+                        goto Ex;
+                    }
+                    else if (hs.windows.amount == 4)
+                    {
+                        if (hs.rOOF.amount<1)
+                        {
+                            Console.WriteLine($"{ wr.name} строит крышу");
+                            hs.rOOF.amount ++;
+                            goto Ex;
+                        }
+                    }
                 }
-                else if (CheckReport(chekingHouse.rOOF.title))
-                {
-                    chekingHouse.rOOF.title = "Крыша";
-                    compleet = $"{chekingHouse.rOOF.title} готова";
-                }
-                else compleet ="Дом построен";
             }
-
-            return chekingHouse;
+            Ex: return hs;
         }
-    }
+    }   
 }

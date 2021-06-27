@@ -6,7 +6,6 @@ namespace HouseProject
 {
     public interface IPart
     {
-        string title { get; set; }
+        int amount { get; set; }
     }
-    
 }

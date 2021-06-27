@@ -6,7 +6,7 @@ namespace HouseProject
 {
     public class Window:IPart
     {
-        public string title { get; set; }
+        public int amount { get; set; }
 
 
     }

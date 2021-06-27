@@ -9,6 +9,8 @@ namespace HouseProject.BuildingTeam
     {
         string name { get; set; }
 
-        public House CompleetPart(House chekingHouse, out string str);
+        
+
+     
     }
 }

@@ -7,43 +7,38 @@ namespace HouseProject.HouseParts
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Строительство дома");
-            Console.WriteLine("------------------");
-            string message;
+            Tools.Beginning();
+            Team team = new Team();
             House houseOne = new House();
-            House houseTwo = new House();
-            Team team = new Team("Бригадир","Рабочий");
-            Console.WriteLine($"{team.teamLaeder} и {team.worker} готовы работе");
+            Console.WriteLine($"{team.teamLeader.name} и {team.worker.name} готовы к работе");
             string select;
-            do
-            {
-                Console.WriteLine("Веберите команду: 1 - строить, 2 - посмотреть отчёт, 3 - закончить работу");
+            string message;
+            do { 
+                Console.WriteLine($"Выберите команду: 1 - строить; 2 - Посмотреть отчёт; 3 - закончить работу");
                 select = Console.ReadLine();
                 switch (select)
                 {
                     case "1":
-                        new TeamLaeder().CompleetPart(houseOne, out string checking);
-                        if (checking == null)
-                        { message = $"{team.worker.name} строит фундамент";
-                            TeamLaeder.PrintMSG(message);
-                            new Worker().CompleetPart(houseOne, out string cmplt);
-                            TeamLaeder.PrintMSG(cmplt);
-                            houseOne.baseMent.title = "Фундамент";
+                        if (houseOne.baseMent.amount == 1 && houseOne.walls.amount == 4 && houseOne.windows.amount == 4 && houseOne.rOOF.amount ==1)
+                        {
+                            message = "Дом построен";
+                            TeamLeader.Printmsg(message);
                         }
-                        else { message = $"{team.worker.name} строит {checking}";
-                            TeamLaeder.PrintMSG(message);
+                        else
+                        {
+                            Worker.BuildingPatrs(houseOne, team.worker);
                         }
                         break;
                     case "2":
-                        new TeamLaeder().PrintReport(houseOne);
+                        TeamLeader.PrintReport(houseOne);
                         break;
                     default:
-                        message = "Команда неясна";
-                        TeamLaeder.PrintMSG(message);
+                        Console.WriteLine("Команда неверна");
                         break;
                 }
+            }while (select != "3") ;
 
-            } while (select != "3");
+
         }
     }
 }
